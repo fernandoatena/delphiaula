@@ -25,10 +25,6 @@ var
 
 implementation
 
-uses DataModuleConexao;
-
-
-
 {$R *.dfm}
 
 end.

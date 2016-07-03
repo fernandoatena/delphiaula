@@ -3,11 +3,13 @@ unit DataModuleConexao;
 interface
 
 uses
-  SysUtils, Classes, ZConnection;
+  SysUtils, Classes, ZConnection, StrUtils, Windows,
+  Forms, Messages, Dialogs;
+
 
 type
   TDMConexao = class(TDataModule)
-    ZConnection: TZConnection;
+    ZConexao: TZConnection;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -20,13 +22,16 @@ var
 
 implementation
 
+
 {$R *.dfm}
 
 procedure TDMConexao.DataModuleCreate(Sender: TObject);
 var
-  Path, PathDBA, PasswordDBA: string;
+  Linha, pathDBA, userDBA, passwordDBA, versionDBA: string;
+  FileInput: TextFile;
 begin
-    try
+  try
+    userDBA := 'SYSDBA';
     Linha := ExtractFileDir(Application.ExeName);
     if FileExists(ExtractFileDir(Application.ExeName) + '\configemail.ini') = false then
     begin
@@ -43,27 +48,33 @@ begin
          if not eof(FileInput) then
            Readln(FileInput, Linha);
         if pos('PATHDBA=', UpperCase(Linha)) > 0 then
-          EnderecodoBanco := trim(copy(Linha,14,100));
+          pathDBA := trim(copy(Linha,9,100));
       end;
       if pos('[PASSWORDDBA]', UpperCase(Linha)) > 0 then
       begin
         if not eof(FileInput) then
           Readln(FileInput, Linha);
         if pos('PASSWORDDBA=', UpperCase(Linha)) > 0 then
-          SenhadoBanco := trim(copy(Linha,10,100));
+          passwordDBA := trim(copy(Linha,13,100));
       end;
       if pos('[VERSION]', UpperCase(Linha)) > 0 then
       begin
         if not eof(FileInput) then
           Readln(FileInput, Linha);
         if pos('VERSION=', UpperCase(Linha)) > 0 then
-          VersaodoBanco := trim(copy(Linha,8,100));
+          versionDBA := trim(copy(Linha,9,100));
       end;
     end;
     CloseFile(FileInput);
   except;
     CloseFile(FileInput);
   end;
+  ZConexao.Disconnect;
+  ZConexao.HostName := '';
+  ZConexao.Database := pathDBA;
+  ZConexao.User := userDBA;
+  ZConexao.Password := passwordDBA;
+  ZConexao.Connected := true;
 end;
 
 end.

@@ -5,7 +5,8 @@ object DMConexao: TDMConexao
   Top = 124
   Height = 244
   Width = 416
-  object ZConnection: TZConnection
+  object ZConexao: TZConnection
+    Protocol = 'firebird-2.1'
     TransactIsolationLevel = tiReadCommitted
     Left = 27
     Top = 34

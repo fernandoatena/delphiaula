@@ -9,7 +9,7 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TDMConexao, DMConexao);
   Application.CreateForm(TFrmQuickReport, FrmQuickReport);
+  Application.CreateForm(TDMConexao, DMConexao);
   Application.Run;
 end.

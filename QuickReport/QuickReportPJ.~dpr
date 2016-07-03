@@ -3,7 +3,7 @@ program QuickReportPJ;
 uses
   Forms,
   QuickReport in 'QuickReport.pas' {FrmQuickReport},
-  DataModule in 'DataModule.pas' {DMConexao: TDataModule};
+  DataModuleConexao in 'DataModuleConexao.pas' {DMConexao: TDataModule};
 
 {$R *.res}
 
