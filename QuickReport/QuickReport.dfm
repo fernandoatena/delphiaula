@@ -1,6 +1,6 @@
 object FrmQuickReport: TFrmQuickReport
-  Left = 256
-  Top = 124
+  Left = 274
+  Top = 146
   Width = 870
   Height = 61
   Caption = 'Delphi Class about QuickReport'
@@ -25,6 +25,7 @@ object FrmQuickReport: TFrmQuickReport
       Caption = 'QuickReport'
       object ReportDetails1: TMenuItem
         Caption = 'Report Details'
+        OnClick = ReportDetails1Click
       end
       object ReportSubDetails1: TMenuItem
         Caption = 'Report SubDetails'
