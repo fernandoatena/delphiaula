@@ -48,5 +48,6 @@ object Form1: TForm1
     Height = 25
     Caption = 'Visualizar'
     TabOrder = 2
+    OnClick = Button1Click
   end
 end

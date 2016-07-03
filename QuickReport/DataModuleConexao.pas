@@ -9,8 +9,9 @@ uses
 
 type
   TDMConexao = class(TDataModule)
-    ZConexao: TZConnection;
+    ZConexao: TZConnection;  // Habilita como escopo global  
     procedure DataModuleCreate(Sender: TObject);
+
   private
     { Private declarations }
   public

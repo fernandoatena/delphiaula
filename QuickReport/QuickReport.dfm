@@ -1,6 +1,6 @@
 object FrmQuickReport: TFrmQuickReport
-  Left = 274
-  Top = 146
+  Left = 253
+  Top = 132
   Width = 870
   Height = 61
   Caption = 'Delphi Class about QuickReport'
