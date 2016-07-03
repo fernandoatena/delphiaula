@@ -14,6 +14,7 @@ type
     ReportDetails1: TMenuItem;
     ReportSubDetails1: TMenuItem;
     ReportCharts1: TMenuItem;
+    procedure ReportDetails1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,10 +26,16 @@ var
 
 implementation
 
-uses DataModuleConexao;
+uses DataModuleConexao, Real001;
 
 
 
 {$R *.dfm}
+
+procedure TFrmQuickReport.ReportDetails1Click(Sender: TObject);
+begin
+  Form1 := TForm1.create(self);
+  Form1.show;
+end;
 
 end.
