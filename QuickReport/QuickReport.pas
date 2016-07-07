@@ -14,7 +14,8 @@ type
     ReportDetails1: TMenuItem;
     ReportSubDetails1: TMenuItem;
     ReportCharts1: TMenuItem;
-    procedure ReportDetails1Click(Sender: TObject);
+    RealAula1: TMenuItem;
+    procedure RealAula1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,13 +27,13 @@ var
 
 implementation
 
-uses DataModuleConexao, Real001;
+uses DataModuleConexao, Real001, QRDetail002;
 
 
 
 {$R *.dfm}
 
-procedure TFrmQuickReport.ReportDetails1Click(Sender: TObject);
+procedure TFrmQuickReport.RealAula1Click(Sender: TObject);
 begin
   Form1 := TForm1.create(self);
   Form1.show;

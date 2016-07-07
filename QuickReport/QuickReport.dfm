@@ -2,7 +2,7 @@ object FrmQuickReport: TFrmQuickReport
   Left = 253
   Top = 132
   Width = 870
-  Height = 61
+  Height = 95
   Caption = 'Delphi Class about QuickReport'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -25,7 +25,11 @@ object FrmQuickReport: TFrmQuickReport
       Caption = 'QuickReport'
       object ReportDetails1: TMenuItem
         Caption = 'Report Details'
-        OnClick = ReportDetails1Click
+        object RealAula1: TMenuItem
+          Break = mbBarBreak
+          Caption = 'Rel Aula'
+          OnClick = RealAula1Click
+        end
       end
       object ReportSubDetails1: TMenuItem
         Caption = 'Report SubDetails'
