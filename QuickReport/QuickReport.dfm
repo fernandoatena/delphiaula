@@ -27,8 +27,20 @@ object FrmQuickReport: TFrmQuickReport
         Caption = 'Report Details'
         object RealAula1: TMenuItem
           Break = mbBarBreak
-          Caption = 'Rel Aula'
+          Caption = 'Report - Class 1'
           OnClick = RealAula1Click
+        end
+        object RelatorioAula21: TMenuItem
+          Caption = '    - Task of report 1'
+          OnClick = RelatorioAula21Click
+        end
+        object RelatorioAula22: TMenuItem
+          Caption = 'Report - Class 2'
+          OnClick = RelatorioAula22Click
+        end
+        object RelatorioAula2tarefa1: TMenuItem
+          Caption = '    - Task of report 2'
+          OnClick = RelatorioAula2tarefa1Click
         end
       end
       object ReportSubDetails1: TMenuItem

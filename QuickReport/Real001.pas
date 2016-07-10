@@ -14,8 +14,6 @@ type
     Label2: TLabel;
     Button1: TButton;
     Button2: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,17 +28,5 @@ implementation
 uses QRDetail001, DataModuleConexao, QRDetail002;
 
 {$R *.dfm}
-
-procedure TForm1.Button1Click(Sender: TObject);
-begin
-  FrmQRDetail001 := TFrmQRDetail001.Create(self);
-  FrmQRDetail001.Preview;
-end;
-
-procedure TForm1.Button2Click(Sender: TObject);
-begin
-  FrmQRDetail002 := TFrmQRDetail002.Create(self);
-  FrmQRDetail002.Preview;
-end;
 
 end.
